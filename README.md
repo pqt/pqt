@@ -23,8 +23,6 @@
   <span> · </span>
   <a href="https://unsplash.com/@pqt">Unsplash</a>
   <span> · </span>
-  <a href="https://dribbble.com/pqt">Dribbble</a>
-  <span> · </span>
   <a href="https://www.linkedin.com/in/pqt/">LinkedIn</a>
 </div>
 

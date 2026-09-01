@@ -1,0 +1,187 @@
+<svg width="760" height="460" viewBox="0 0 760 460" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Austin Paquette profile chat</title>
+  <desc id="desc">An animated chat-style introduction for Austin Paquette.</desc>
+  <style>
+    .bubble {
+      fill: #e9e9eb;
+    }
+
+    .dot {
+      fill: #8e8e93;
+    }
+
+    text {
+      fill: #242424;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .dot-1 {
+      animation: dot 1s 0s infinite ease-in-out;
+    }
+
+    .dot-2 {
+      animation: dot 1s 0.16s infinite ease-in-out;
+    }
+
+    .dot-3 {
+      animation: dot 1s 0.32s infinite ease-in-out;
+    }
+
+    @keyframes typing {
+      0%, 100% {
+        opacity: 0;
+      }
+
+      12%, 88% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes show {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes dot {
+      0%, 100% {
+        opacity: 0.45;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    
+        .typing-1 {
+          animation: typing 1.2s 0s linear both;
+        }
+
+        .msg-1 {
+          animation: show 0.22s 1.2s ease-out both;
+        }
+
+        .typing-2 {
+          animation: typing 1.2s 1.85s linear both;
+        }
+
+        .msg-2 {
+          animation: show 0.22s 3.05s ease-out both;
+        }
+
+        .typing-3 {
+          animation: typing 1.2s 3.7s linear both;
+        }
+
+        .msg-3 {
+          animation: show 0.22s 4.9s ease-out both;
+        }
+
+        .typing-4 {
+          animation: typing 1.2s 5.55s linear both;
+        }
+
+        .msg-4 {
+          animation: show 0.22s 6.75s ease-out both;
+        }
+
+        .typing-5 {
+          animation: typing 1.2s 7.4s linear both;
+        }
+
+        .msg-5 {
+          animation: show 0.22s 8.6s ease-out both;
+        }
+
+        .typing-6 {
+          animation: typing 1.2s 9.25s linear both;
+        }
+
+        .msg-6 {
+          animation: show 0.22s 10.45s ease-out both;
+        }
+
+    @media (prefers-color-scheme: dark) {
+      .bubble {
+        fill: #3b3b3d;
+      }
+
+      .dot {
+        fill: #a6a6aa;
+      }
+
+      text {
+        fill: #f2f2f2;
+      }
+    }
+  </style>
+  <g class="typing typing-1" transform="translate(18 14)">
+    <rect class="bubble" width="76" height="42" rx="21" />
+    <circle class="dot dot-1" cx="29" cy="21" r="5" />
+    <circle class="dot dot-2" cx="43" cy="21" r="5" />
+    <circle class="dot dot-3" cx="57" cy="21" r="5" />
+  </g>
+<g class="message msg-1" transform="translate(18 14)">
+    <rect class="bubble" width="189" height="51" rx="21" />
+    <text x="18" y="34">Hi, I'm Austin.</text>
+  </g>
+<g class="typing typing-2" transform="translate(18 79)">
+    <rect class="bubble" width="76" height="42" rx="21" />
+    <circle class="dot dot-1" cx="29" cy="21" r="5" />
+    <circle class="dot dot-2" cx="43" cy="21" r="5" />
+    <circle class="dot dot-3" cx="57" cy="21" r="5" />
+  </g>
+<g class="message msg-2" transform="translate(18 79)">
+    <rect class="bubble" width="648" height="51" rx="21" />
+    <text x="18" y="34">I'm a Calgary-based principal frontend and product engineer.</text>
+  </g>
+<g class="typing typing-3" transform="translate(18 144)">
+    <rect class="bubble" width="76" height="42" rx="21" />
+    <circle class="dot dot-1" cx="29" cy="21" r="5" />
+    <circle class="dot dot-2" cx="43" cy="21" r="5" />
+    <circle class="dot dot-3" cx="57" cy="21" r="5" />
+  </g>
+<g class="message msg-3" transform="translate(18 144)">
+    <rect class="bubble" width="689" height="79" rx="21" />
+    <text x="18" y="34">I build product interfaces, design systems, developer tools, and</text>
+    <text x="18" y="62">applied AI workflows.</text>
+  </g>
+<g class="typing typing-4" transform="translate(18 237)">
+    <rect class="bubble" width="76" height="42" rx="21" />
+    <circle class="dot dot-1" cx="29" cy="21" r="5" />
+    <circle class="dot dot-2" cx="43" cy="21" r="5" />
+    <circle class="dot dot-3" cx="57" cy="21" r="5" />
+  </g>
+<g class="message msg-4" transform="translate(18 237)">
+    <rect class="bubble" width="444" height="51" rx="21" />
+    <text x="18" y="34">Calgary check-in: 20 C / 68 F and clear.</text>
+  </g>
+<g class="typing typing-5" transform="translate(18 302)">
+    <rect class="bubble" width="76" height="42" rx="21" />
+    <circle class="dot dot-1" cx="29" cy="21" r="5" />
+    <circle class="dot dot-2" cx="43" cy="21" r="5" />
+    <circle class="dot dot-3" cx="57" cy="21" r="5" />
+  </g>
+<g class="message msg-5" transform="translate(18 302)">
+    <rect class="bubble" width="648" height="79" rx="21" />
+    <text x="18" y="34">It is Monday around 7:53 PM here, so the README gets a fresh</text>
+    <text x="18" y="62">little pulse.</text>
+  </g>
+<g class="typing typing-6" transform="translate(18 395)">
+    <rect class="bubble" width="76" height="42" rx="21" />
+    <circle class="dot dot-1" cx="29" cy="21" r="5" />
+    <circle class="dot dot-2" cx="43" cy="21" r="5" />
+    <circle class="dot dot-3" cx="57" cy="21" r="5" />
+  </g>
+<g class="message msg-6" transform="translate(18 395)">
+    <rect class="bubble" width="526" height="51" rx="21" />
+    <text x="18" y="34">Website: pqt.dev | LinkedIn: linkedin.com/in/pqt</text>
+  </g>
+</svg>

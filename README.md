@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://pqt.dev">
+  <a href="https://paq.sh">
     <img
       alt="Chat-style introduction for Austin Paquette"
       src="https://raw.githubusercontent.com/pqt/pqt/main/chat.svg"
@@ -9,9 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://pqt.dev">Website</a>
-  <span> | </span>
-  <a href="https://www.linkedin.com/in/pqt/">LinkedIn</a>
+  <a href="https://paq.sh">Website</a>
   <span> | </span>
   <a href="https://unsplash.com/@pqt">Unsplash</a>
 </p>

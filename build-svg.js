@@ -4,10 +4,8 @@ const PROFILE = {
   firstName: "Austin",
   city: "Calgary",
   timezone: "America/Edmonton",
-  latitude: 51.0447,
-  longitude: -114.0719,
-  website: "pqt.dev",
-  linkedin: "linkedin.com/in/pqt",
+  cityCenterLatitude: 51.05,
+  cityCenterLongitude: -114.07,
 };
 
 const WEATHER_CODES = {
@@ -53,8 +51,104 @@ const PADDING_BOTTOM = 15;
 const GAP = 14;
 const TYPING_WIDTH = 76;
 const TYPING_HEIGHT = 42;
-const AVG_CHAR_WIDTH = 10.2;
-const MAX_CHARS_PER_LINE = 64;
+const MAX_LINE_WIDTH = MAX_BUBBLE_WIDTH - PADDING_X * 2;
+const FONT_WIDTHS = {
+  " ": 278,
+  "!": 278,
+  '"': 355,
+  "#": 556,
+  $: 556,
+  "%": 889,
+  "&": 667,
+  "'": 191,
+  "(": 333,
+  ")": 333,
+  "*": 389,
+  "+": 584,
+  ",": 278,
+  "-": 333,
+  ".": 278,
+  "/": 278,
+  0: 556,
+  1: 556,
+  2: 556,
+  3: 556,
+  4: 556,
+  5: 556,
+  6: 556,
+  7: 556,
+  8: 556,
+  9: 556,
+  ":": 278,
+  ";": 278,
+  "<": 584,
+  "=": 584,
+  ">": 584,
+  "?": 556,
+  "@": 1015,
+  A: 667,
+  B: 667,
+  C: 722,
+  D: 722,
+  E: 667,
+  F: 611,
+  G: 778,
+  H: 722,
+  I: 278,
+  J: 500,
+  K: 667,
+  L: 556,
+  M: 833,
+  N: 722,
+  O: 778,
+  P: 667,
+  Q: 778,
+  R: 722,
+  S: 667,
+  T: 611,
+  U: 722,
+  V: 667,
+  W: 944,
+  X: 667,
+  Y: 667,
+  Z: 611,
+  "[": 278,
+  "\\": 278,
+  "]": 278,
+  "^": 469,
+  _: 556,
+  "`": 333,
+  a: 556,
+  b: 556,
+  c: 500,
+  d: 556,
+  e: 556,
+  f: 278,
+  g: 556,
+  h: 556,
+  i: 222,
+  j: 222,
+  k: 500,
+  l: 222,
+  m: 833,
+  n: 556,
+  o: 556,
+  p: 556,
+  q: 556,
+  r: 333,
+  s: 500,
+  t: 278,
+  u: 556,
+  v: 500,
+  w: 722,
+  x: 500,
+  y: 500,
+  z: 500,
+  "{": 334,
+  "|": 260,
+  "}": 334,
+  "~": 584,
+};
 
 async function main() {
   const now = new Date();
@@ -88,14 +182,13 @@ function buildMessages(now, weather) {
     "I build product interfaces, design systems, developer tools, and applied AI workflows.",
     weatherMessage,
     `It is ${weekday} around ${time} here, so the README gets a fresh little pulse.`,
-    `Website: ${PROFILE.website} | LinkedIn: ${PROFILE.linkedin}`,
   ];
 }
 
 async function getWeather() {
   const params = new URLSearchParams({
-    latitude: PROFILE.latitude.toString(),
-    longitude: PROFILE.longitude.toString(),
+    latitude: PROFILE.cityCenterLatitude.toString(),
+    longitude: PROFILE.cityCenterLongitude.toString(),
     current: "temperature_2m,weather_code",
     temperature_unit: "celsius",
     timezone: PROFILE.timezone,
@@ -134,7 +227,7 @@ async function getWeather() {
 function renderSvg(messages) {
   const bubbles = messages.map((message, index) => {
     const lines = wrapText(message);
-    const textWidth = Math.max(...lines.map((line) => estimateTextWidth(line)));
+    const textWidth = Math.max(...lines.map((line) => measureText(line)));
     const width = clamp(
       Math.ceil(textWidth + PADDING_X * 2),
       TYPING_WIDTH,
@@ -189,7 +282,7 @@ function renderSvg(messages) {
 
     text {
       fill: #242424;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: Helvetica, Arial, sans-serif;
       font-size: ${FONT_SIZE}px;
       letter-spacing: 0;
     }
@@ -288,7 +381,7 @@ function wrapText(text) {
   for (const word of words) {
     const candidate = currentLine ? `${currentLine} ${word}` : word;
 
-    if (candidate.length <= MAX_CHARS_PER_LINE) {
+    if (measureText(candidate) <= MAX_LINE_WIDTH) {
       currentLine = candidate;
       continue;
     }
@@ -307,8 +400,10 @@ function wrapText(text) {
   return lines;
 }
 
-function estimateTextWidth(text) {
-  return text.length * AVG_CHAR_WIDTH;
+function measureText(text) {
+  return [...text].reduce((width, character) => {
+    return width + ((FONT_WIDTHS[character] ?? 556) / 1000) * FONT_SIZE;
+  }, 0);
 }
 
 function clamp(value, min, max) {

@@ -15,8 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
       - name: Generate chat SVG
-        run: node build-svg.js
+        run: npm run build
 
       - name: Commit generated SVG
         run: |

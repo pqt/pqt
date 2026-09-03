@@ -152,8 +152,8 @@
     <circle class="dot dot-3" cx="57" cy="21" r="5" />
   </g>
 <g class="message msg-4" transform="translate(18 237)">
-    <rect class="bubble" width="421" height="51" rx="21" />
-    <text x="18" y="34">Calgary check-in: 22 C / 72 F and overcast.</text>
+    <rect class="bubble" width="452" height="51" rx="21" />
+    <text x="18" y="34">Calgary check-in: 19 C / 66 F and mainly clear.</text>
   </g>
 <g class="typing typing-5" transform="translate(18 302)">
     <rect class="bubble" width="76" height="42" rx="21" />
@@ -162,8 +162,8 @@
     <circle class="dot dot-3" cx="57" cy="21" r="5" />
   </g>
 <g class="message msg-5" transform="translate(18 302)">
-    <rect class="bubble" width="650" height="79" rx="21" />
-    <text x="18" y="34">It is Wednesday around 11:10 AM here, so the README gets a fresh</text>
-    <text x="18" y="62">little pulse.</text>
+    <rect class="bubble" width="669" height="79" rx="21" />
+    <text x="18" y="34">It is Thursday around 11:03 AM here, so the README gets a fresh little</text>
+    <text x="18" y="62">pulse.</text>
   </g>
 </svg>

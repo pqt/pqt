@@ -176,8 +176,8 @@ function buildMessages(now, weather) {
   }).format(now);
 
   const weatherMessage = weather
-    ? `The weather here in ${PROFILE.city} is ${weather.tempC} C / ${weather.tempF} F and ${weather.description}. ${getWeatherRemark(weather)}`
-    : `The weather here in ${PROFILE.city} is taking a short break. Even the sky needs an API retry sometimes.`;
+    ? `The weather here is ${weather.tempC} C / ${weather.tempF} F and ${weather.description}.`
+    : "The weather here is taking a short break.";
 
   return [
     `Hi, I'm ${PROFILE.firstName}`,
@@ -188,46 +188,6 @@ function buildMessages(now, weather) {
     weatherMessage,
     "If you want to learn more about me, or see the work that doesn't make it onto GitHub, my website is paq.sh",
   ];
-}
-
-function getWeatherRemark(weather) {
-  const { description, tempC } = weather;
-
-  if (["clear", "mainly clear"].includes(description)) {
-    return "My bias is showing: I love a sunny Calgary day.";
-  }
-
-  if (description === "partly cloudy") {
-    return "Close enough to sunny that I will absolutely take it.";
-  }
-
-  if (description === "overcast") {
-    return "The sky is in grayscale, but the work still has color.";
-  }
-
-  if (description === "foggy") {
-    return "Calgary is rendering at reduced opacity today.";
-  }
-
-  if (["drizzly", "rainy", "showery"].includes(description)) {
-    return "Good weather for staying inside and getting into flow.";
-  }
-
-  if (["freezing drizzle", "freezing rain"].includes(description)) {
-    return "A little too interactive for my sidewalk preferences.";
-  }
-
-  if (description === "snowy") {
-    return tempC <= -10
-      ? "A proper Alberta cold open."
-      : "Calgary is making the seasonality noticeable.";
-  }
-
-  if (description === "stormy") {
-    return "The sky has entered the conversation with strong opinions.";
-  }
-
-  return "Weather-like, which is honest if not especially poetic.";
 }
 
 async function getWeather() {

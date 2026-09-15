@@ -176,8 +176,8 @@ function buildMessages(now, weather) {
   }).format(now);
 
   const weatherMessage = weather
-    ? `The weather here is ${weather.tempC} C / ${weather.tempF} F and ${weather.description}.`
-    : "The weather here is taking a short break.";
+    ? `The weather is ${weather.tempC} C / ${weather.tempF} F and ${weather.description}.`
+    : "The weather is taking a short break.";
 
   return [
     `Hi, I'm ${PROFILE.firstName}`,

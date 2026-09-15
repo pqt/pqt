@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 
 const PROFILE = {
   firstName: "Austin",
+  nickname: "Paq",
   city: "Calgary",
   timezone: "America/Edmonton",
   cityCenterLatitude: 51.05,
@@ -161,9 +162,11 @@ async function main() {
 }
 
 function buildMessages(now, weather) {
-  const weekday = new Intl.DateTimeFormat("en-US", {
+  const date = new Intl.DateTimeFormat("en-US", {
     timeZone: PROFILE.timezone,
     weekday: "long",
+    month: "long",
+    day: "numeric",
   }).format(now);
 
   const time = new Intl.DateTimeFormat("en-US", {
@@ -173,16 +176,58 @@ function buildMessages(now, weather) {
   }).format(now);
 
   const weatherMessage = weather
-    ? `${PROFILE.city} check-in: ${weather.tempC} C / ${weather.tempF} F and ${weather.description}.`
-    : `${PROFILE.city} check-in: local weather is taking a short break.`;
+    ? `The weather here in ${PROFILE.city} is ${weather.tempC} C / ${weather.tempF} F and ${weather.description}. ${getWeatherRemark(weather)}`
+    : `The weather here in ${PROFILE.city} is taking a short break. Even the sky needs an API retry sometimes.`;
 
   return [
-    `Hi, I'm ${PROFILE.firstName}.`,
+    `Hi, I'm ${PROFILE.firstName}`,
+    `But you can call me ${PROFILE.nickname}.`,
     `I'm a ${PROFILE.city}-based principal frontend and product engineer.`,
     "I build product interfaces, design systems, developer tools, and applied AI workflows.",
+    `It is ${date} around ${time} here.`,
     weatherMessage,
-    `It is ${weekday} around ${time} here, so the README gets a fresh little pulse.`,
+    "If you want to learn more about me, or see the work that doesn't make it onto GitHub, my website is paq.sh",
   ];
+}
+
+function getWeatherRemark(weather) {
+  const { description, tempC } = weather;
+
+  if (["clear", "mainly clear"].includes(description)) {
+    return "My bias is showing: I love a sunny Calgary day.";
+  }
+
+  if (description === "partly cloudy") {
+    return "Close enough to sunny that I will absolutely take it.";
+  }
+
+  if (description === "overcast") {
+    return "The sky is in grayscale, but the work still has color.";
+  }
+
+  if (description === "foggy") {
+    return "Calgary is rendering at reduced opacity today.";
+  }
+
+  if (["drizzly", "rainy", "showery"].includes(description)) {
+    return "Good weather for staying inside and getting into flow.";
+  }
+
+  if (["freezing drizzle", "freezing rain"].includes(description)) {
+    return "A little too interactive for my sidewalk preferences.";
+  }
+
+  if (description === "snowy") {
+    return tempC <= -10
+      ? "A proper Alberta cold open."
+      : "Calgary is making the seasonality noticeable.";
+  }
+
+  if (description === "stormy") {
+    return "The sky has entered the conversation with strong opinions.";
+  }
+
+  return "Weather-like, which is honest if not especially poetic.";
 }
 
 async function getWeather() {

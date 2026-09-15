@@ -7,9 +7,3 @@
     />
   </a>
 </p>
-
-<p align="center">
-  <a href="https://paq.sh">Website</a>
-  <span> | </span>
-  <a href="https://unsplash.com/@pqt">Unsplash</a>
-</p>

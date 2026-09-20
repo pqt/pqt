@@ -178,8 +178,8 @@
     <circle class="dot dot-3" cx="57" cy="21" r="5" />
   </g>
 <g class="message msg-5" transform="translate(18 302)">
-    <rect class="bubble" width="500" height="51" rx="21" />
-    <text x="18" y="34">It is Saturday, September 19 around 10:30 AM here.</text>
+    <rect class="bubble" width="488" height="51" rx="21" />
+    <text x="18" y="34">It is Sunday, September 20 around 10:48 AM here.</text>
   </g>
 <g class="typing typing-6" transform="translate(18 367)">
     <rect class="bubble" width="76" height="42" rx="21" />
@@ -189,7 +189,7 @@
   </g>
 <g class="message msg-6" transform="translate(18 367)">
     <rect class="bubble" width="366" height="51" rx="21" />
-    <text x="18" y="34">The weather is 13 C / 55 F and clear.</text>
+    <text x="18" y="34">The weather is 17 C / 63 F and clear.</text>
   </g>
 <g class="typing typing-7" transform="translate(18 432)">
     <rect class="bubble" width="76" height="42" rx="21" />
